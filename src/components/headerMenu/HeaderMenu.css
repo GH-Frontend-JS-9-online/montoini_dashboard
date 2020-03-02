@@ -1,0 +1,121 @@
+.header {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 80px rgba(23, 24, 32, 0.2);
+}
+
+.header-nav__link {
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header__logo {
+    padding: 40px 40px 40px 60px;
+}
+
+.header-nav__icon {
+    padding: 0 35px 0 35px;
+}
+
+.header-nav__icon:hover {
+    color: #2196f3;
+    transition: color 1s ease;
+}
+
+.header-nav__icon-plus {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 135px;
+    height: 48px;
+    border-radius: 24px;
+    border: 2px solid #2196f3;
+    background-color: transparent;
+    color: #2196f3;
+    padding-left: 50px;
+}
+
+.header-nav__icon-plus:hover {
+    border: 2px solid #fff;
+    color: #2196f3;
+    background-color: #fff;
+    transition: background-color 1s ease;
+}
+
+.header-nav__icon-plus > span {
+    display: block;
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+    padding-right: 100px;
+}
+
+.header-nav__icon-plus:hover > span {
+    color: #2196f3;
+}
+
+@media (max-width: 800px) and (min-width: 310px) {
+    .header {
+        width: 80%;
+        height: 70px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header__logo {
+        transform: scale(0.6);
+        margin-left: 20px;
+    }
+
+    .header-nav__item {
+        width: 90%;
+    }
+
+    .header-nav__link {
+        font-size: 10px;
+    }
+
+    .header-nav__icon {
+        padding: 0 15px 0 15px;
+    }
+
+    .header-nav__icon-plus {
+        transform: scale(0.6);
+        margin-left: -40px;
+        margin-right: -20px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .header {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-nav__item {
+        width: 90%;
+    }
+
+    .header-nav__icon-plus {
+        transform: scale(0.9);
+        margin-right: 10px;
+    }
+
+    .header-nav__icon {
+        padding: 0 20px 0 20px;
+    }
+}

@@ -1,0 +1,66 @@
+.inbox-nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 3px 80px rgba(23, 24, 32, 0.2);
+    background-color: #2481ce;
+}
+
+.inbox-nav__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.inbox-nav__left, .inbox-nav__right {
+    display: flex;
+    align-items: center;
+}
+
+.inbox-nav__right-link, .inbox-nav__left-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.32px;
+}
+
+.inbox-nav__right-item {
+    margin: 30px 25px 30px 0;
+}
+
+.data {
+    width: 157px;
+    height: 36px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.data:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: background-color 1s ease;
+}
+
+.data::after {
+    content: "\2039";
+    color: #ffffff;
+    transform: rotate(-90deg);
+    margin-left: 5px;
+    font-size: 30px;
+}
+
+.inbox-nav__left-item {
+    margin: 30px 0 30px 50px;
+}
+
+.inbox-nav__left-link i {
+    margin-right: 12px;
+}
+
+.trash, .sent {
+    color: #2b2d3c;
+}

@@ -1,0 +1,115 @@
+.projects-content {
+    width: 80%;
+    margin: 12px auto;
+    padding: 18px 0;
+    border-radius: 5px;
+    background-color: #3a3e52;
+    border-left: 5px solid #e2e3e8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.projects__item {
+    width: 100%;
+    text-align: center;
+}
+
+.progress, .assigned {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress > h4 {
+    margin-right: 16px;
+    width: 20%;
+}
+
+.progress:last-child > div {
+    width: 80%;
+    height: 8px;
+    border-radius: 4px;
+    background: #9ea3b4;
+}
+
+.progress > div > span {
+    display: block;
+    height: 100%;
+    border-radius: 4px;
+    background-color: rgb(43,194,83);
+}
+
+.projects-content h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 0.32px;
+    line-height: 25px;
+}
+
+.projects-content p {
+    font-size: 14px;
+    color: #9ea3b4;
+    letter-spacing: 0.28px;
+}
+
+.assigned {
+    text-align: left;
+    margin-left: 10px;
+}
+
+.assigned i {
+    font-size: 40px;
+    color: #9ea3b4;
+    margin-right: 15px;
+}
+
+.ellipsis {
+    color: #9ea3b4;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .projects-content h4 {
+        font-size: 12px;
+        letter-spacing: 0.10px;
+    }
+
+    .projects-content p {
+        font-size: 11px;
+    }
+
+    .assigned i {
+        font-size: 30px;
+    }
+
+    .ellipsis {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 800px) and (min-width: 320px) {
+    .projects-content {
+        width: 80%;
+        margin-left: 70px;
+    }
+
+    .projects-content h4 {
+        font-size: 7px;
+        letter-spacing: 0.10px;
+    }
+
+    .projects-content p {
+        font-size: 6px;
+    }
+
+    .assigned i {
+        font-size: 17px;
+    }
+
+    .ellipsis {
+        font-size: 4px;
+    }
+}

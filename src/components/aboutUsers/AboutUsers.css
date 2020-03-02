@@ -1,0 +1,77 @@
+.aboutUser {
+    box-shadow: 0 3px 80px rgba(23, 24, 32, 0.3);
+    background-color: #2b2d3c;
+    text-align: center;
+    color: #ffffff;
+    padding: 58px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    flex-basis: 15%;
+}
+
+h2, h3, h4, h5, p, span {
+    margin: 0;
+    padding: 0;
+}
+
+.aboutUser__photo {
+    position: relative;
+    z-index: 1;
+    font-size: 100px;
+    color: #9ca1b2;
+}
+
+
+.aboutUser__data h2 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.44px;
+    margin-top: 39px;
+    margin-bottom: 8px;
+}
+
+.aboutUser__data h3 {
+    color: #9ca1b2;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.32px;
+}
+
+.aboutUser__data p {
+    color: #9ca1b2;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.42px;
+    margin-top: 8px;
+    margin-bottom: 55px;
+}
+
+.aboutUser__contacts {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.aboutUser__item {
+    margin-bottom: 26px;
+}
+
+.aboutUser__item h4 {
+    color: #9ca1b2;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.42px;
+}
+
+.aboutUser__item span {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.48px;
+}
+
+

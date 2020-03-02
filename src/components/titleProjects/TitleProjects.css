@@ -1,0 +1,34 @@
+.title-projects {
+    width: 80%;
+    margin: 0 0 20px 180px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.title-projects__item {
+    width: 100%;
+    text-align: center;
+    color: #9ea3b4;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.32px;
+}
+
+@media (max-width: 800px) and (min-width: 320px) {
+    .title-projects__item {
+        margin-bottom: 0;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .title-projects {
+        margin: 0 auto;
+    }
+
+    .title-projects__item {
+        margin-bottom: 0;
+        font-size: 12px;
+    }
+}
