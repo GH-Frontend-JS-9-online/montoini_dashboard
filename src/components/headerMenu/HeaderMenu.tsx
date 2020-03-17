@@ -13,17 +13,15 @@ export const HeaderMenu: React.FC = () => {
         }
     }
 
-    const closeGetProject = ():void => {
+    const closeGetProject = (): void => {
         setProject(prev => !prev)
     }
     return(
-        <>
-            <header className="header">
-                <nav className="header__logo">
-                    <A href="/">
-                        <img src={logo} alt="logo"/>
-                    </A>
-                </nav>
+        <header className="header">
+            <nav className="header__nav">
+                <A href="/">
+                    <img className="header__logo" src={logo} alt="logo"/>
+                </A>
                 <ul className="header-nav__menu">
                     {headerIcons.map((item, index) => {
                         return (
@@ -39,8 +37,8 @@ export const HeaderMenu: React.FC = () => {
                         )
                     })}
                 </ul>
-            </header>
-            <GetProject close={closeGetProject} getProjectDisplay={(isShowProject) ? 'flex' : 'none'} />
-        </>
+                <GetProject close={closeGetProject} getProjectDisplay={(isShowProject) ? 'flex' : 'none'} />
+            </nav>
+        </header>
     )
 }

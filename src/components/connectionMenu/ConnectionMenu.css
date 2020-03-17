@@ -1,0 +1,48 @@
+.CircularProgressbar {
+    width: 76px;
+    height: 76px;
+}
+
+.connection-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 62px;
+    margin-bottom: 146px;
+    margin-left: 90px;
+}
+
+.connection-nav__menu {
+    list-style: none;
+    display: flex;
+}
+
+.connection-nav__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visitors {
+    margin-left: 20px;
+    margin-right: 50px;
+}
+
+.visitors h3 {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0.44px;
+}
+
+.visitors p {
+    color: #9ca1b2;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    text-transform: uppercase;
+    letter-spacing: 0.32px;
+}
+
+

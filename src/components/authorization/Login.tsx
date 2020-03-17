@@ -1,15 +1,16 @@
 import React, {useState} from 'react'
 import './Authorization.css'
 import {IUser} from '../../interfaces/IUser'
-import ApiService from '../../services/ApiService'
+import apiService from '../../services/ApiService'
 import {A} from 'hookrouter'
 import {HeaderMenu} from '../headerMenu/HeaderMenu'
 import {AsideMenu} from '../asideMenu/AsideMenu'
 
-
 export const Login: React.FC = () => {
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
+    // eslint-disable-next-line
+    const [error, setError] = React.useState<string>('')
 
     const emailHandler = (event: React.ChangeEvent<HTMLInputElement>):void => {
         setEmail(event.target.value)
@@ -26,13 +27,28 @@ export const Login: React.FC = () => {
 
     const handlerSubmit = (event: React.FormEvent<HTMLFormElement>):void => {
         event.preventDefault()
-        ApiService
-            .login(user)
-            .then(response => localStorage.setItem('token', response.headers.get('x-auth-token') as any))
-            .catch(err => console.error(err))
-        setEmail('')
-        setPassword('')
-    }
+        if(!user.email) setError(prev => 'Error: Please enter your Email.');
+            else if(!user.password) setError(prev => 'Error: Please enter your Password.');
+            else {
+            apiService
+                .getCurrentUser()
+                .then(response => response.json())
+                .then(response => {
+                    localStorage.setItem('user',
+                        JSON.stringify([...localStorage.getItem('user') as any, response]))
+                })
+                .catch(error => console.error(error))
+                    apiService
+                        .login(user)
+                        .then(response => localStorage.setItem('token',
+                            response.headers.get('x-auth-token') as any))
+                        .catch(() => setError(prev => 'Error: Such user does not exist or entered data incorrectly.'))
+                    setEmail('')
+                    setPassword('')
+                alert('You entered the correct email and password.')
+                window.location.assign('http://localhost:3000/inbox')
+            }
+        }
 
     return (
         <div>

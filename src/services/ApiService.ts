@@ -2,13 +2,13 @@ import {IUser} from '../interfaces/IUser'
 import {IProject} from '../interfaces/IProject'
 
 class ApiService {
-    apiData: string;
+    apiBase: string;
     constructor() {
-        this.apiData = `https://geekhub-frontend-js-9.herokuapp.com/api`
+        this.apiBase = `https://geekhub-frontend-js-9.herokuapp.com/api`
     }
 
-    async signUp(user: IUser): Promise<any> {
-        return await fetch(`${this.apiData}/users`, {
+    async signUp(user: IUser):Promise<any> {
+        return await fetch(`${this.apiBase}/users`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -18,7 +18,7 @@ class ApiService {
     }
 
     async login(user: IUser):Promise<any> {
-        return await fetch(`${this.apiData}/users/login`, {
+        return await fetch(`${this.apiBase}/users/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -29,7 +29,7 @@ class ApiService {
 
     async resetPassword(user: IUser):Promise<any> {
         let token: string = localStorage.getItem('token') as any
-        return await fetch(`${this.apiData}/users/reset_password`, {
+        return await fetch(`${this.apiBase}/users/reset_password`, {
             method: 'POST',
             headers: {
                 'x-access-token': token,
@@ -39,9 +39,9 @@ class ApiService {
         })
     }
 
-    async getCurrentUser(): Promise<any> {
+    async getCurrentUser():Promise<any> {
         let token: string = localStorage.getItem('token') as any
-        return await fetch(`${this.apiData}/users/`, {
+        return await fetch(`${this.apiBase}/users/`, {
             method: 'GET',
             headers: {
                 'x-access-token': token
@@ -49,10 +49,10 @@ class ApiService {
         })
     }
 
-    async allThreadMessages(): Promise<any> {
+    async allThreadMessages():Promise<any> {
         let token: string = localStorage.getItem('token') as any
         let id: string = JSON.parse(localStorage.getItem('user') as string)._id
-        return await fetch(`${this.apiData}/threads/messages/${id}`, {
+        return await fetch(`${this.apiBase}/threads/messages/${id}`, {
             method: 'GET',
             headers: {
                 'x-access-token': token
@@ -60,10 +60,10 @@ class ApiService {
         })
     }
 
-    async sendMessage(message: string): Promise<any> {
+    async sendMessage(message: string):Promise<any> {
         let token: string = localStorage.getItem('token') as any
         let id: string = JSON.parse(localStorage.getItem('user') as string)._id
-        return await fetch(`${this.apiData}/threads/messages`, {
+        return await fetch(`${this.apiBase}/threads/messages`, {
             method: 'POST',
             headers: {
                 'x-access-token': token,
@@ -80,9 +80,9 @@ class ApiService {
         })
     }
 
-    async getAllProjects(): Promise<any> {
+    async getAllProjects():Promise<any> {
         let token: string = localStorage.getItem('token') as any
-        return await fetch(`${this.apiData}/projects/`, {
+        return await fetch(`${this.apiBase}/projects/`, {
             method: 'GET',
             headers: {
                 'x-access-token': token
@@ -90,9 +90,9 @@ class ApiService {
         })
     }
 
-    async createProject(project: IProject): Promise<any> {
+    async createProject(project: IProject):Promise<any> {
         let token: string = localStorage.getItem('token') as any
-        return await fetch(`${this.apiData}/projects/`, {
+        return await fetch(`${this.apiBase}/projects/`, {
             method: 'POST',
             headers: {
                 'x-access-token': token,
@@ -103,5 +103,5 @@ class ApiService {
     }
 }
 
-const addApiService = new ApiService()
-export default addApiService
+const apiService = new ApiService()
+export default apiService

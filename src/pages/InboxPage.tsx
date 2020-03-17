@@ -5,14 +5,14 @@ import {InboxMenu} from '../components/inboxMenu/InboxMenu'
 import {InboxContent} from '../components/inboxContent/InboxContent'
 import {InboxConversation} from '../components/inboxConversation/InboxConversation'
 import {AboutUsers} from '../components/aboutUsers/AboutUsers'
-import ApiService from '../services/ApiService'
+import apiService from '../services/ApiService'
 
 export const InboxPage: React.FC = () => {
-    ApiService
-        .allThreadMessages()
-        .then(response => response.json())
-        .then(response => localStorage.setItem('allThreadMessages', JSON.stringify(response)))
-        .catch(err => console.error(err))
+        apiService
+            .allThreadMessages()
+            .then(response => response.json())
+            .then(response => localStorage.setItem('allThreadMessages', JSON.stringify(response)))
+            .catch(err => console.error(err))
     return (
         <div>
             <HeaderMenu/>

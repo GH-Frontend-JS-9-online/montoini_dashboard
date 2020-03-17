@@ -9,7 +9,7 @@
     background-color: #404359;
 }
 
-.write-message__text {
+input[name="write-message__text"] {
     width: 100%;
     padding: 13px 20px;
     border-radius: 10px;

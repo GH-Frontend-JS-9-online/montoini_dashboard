@@ -2,21 +2,19 @@ import React from "react"
 import {HeaderMenu} from '../components/headerMenu/HeaderMenu'
 import {AsideMenu} from '../components/asideMenu/AsideMenu'
 import {ShowProjects} from '../components/showProjects/ShowProjects'
-import ApiService from '../services/ApiService'
+import apiService from '../services/ApiService'
 
 export const PageOfProjects: React.FC = () => {
-    ApiService
+    apiService
         .getAllProjects()
         .then(response => response.json())
         .then(response => localStorage.setItem('projects', JSON.stringify(response)))
         .catch(error => console.error(error))
     return (
-        <div>
+        <div className="main">
             <HeaderMenu/>
-            <main className="main">
-                <AsideMenu/>
-                <ShowProjects/>
-            </main>
+            <AsideMenu/>
+            <ShowProjects/>
         </div>
     )
 }

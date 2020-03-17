@@ -1,15 +1,15 @@
 .aboutUser {
-    box-shadow: 0 3px 80px rgba(23, 24, 32, 0.3);
-    background-color: #2b2d3c;
-    text-align: center;
-    color: #ffffff;
-    padding: 58px 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
     flex-basis: 15%;
+    box-shadow: 0 3px 80px rgba(23, 24, 32, 0.3);
+    background-color: #2b2d3c;
+    text-align: center;
+    color: #ffffff;
+    padding: 58px 20px;
 }
 
 h2, h3, h4, h5, p, span {

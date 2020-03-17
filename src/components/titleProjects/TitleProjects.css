@@ -16,9 +16,18 @@
 }
 
 @media (max-width: 800px) and (min-width: 320px) {
+    .title-projects {
+        margin: 0 0 0 80px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
     .title-projects__item {
         margin-bottom: 0;
-        font-size: 10px;
+        font-size: 9px;
+        text-align: left;
+        padding-left: 3px;
     }
 }
 

@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
 import './GetProject.css'
+import apiService from '../../services/ApiService'
 import {IProject} from '../../interfaces/IProject'
-import ApiService from '../../services/ApiService'
 import {useSelector, useDispatch} from 'react-redux'
 import {updateProjects} from '../../reducers/reducers'
+
 
 
 interface GetProjectType {
@@ -16,26 +17,22 @@ const GetProject: React.FC<GetProjectType> = props => {
     const projects = useSelector((state: any) => state.projects)
     const dispatch = useDispatch()
 
-    const [title, setUpTitle] = useState<string>('')
-    const [company, setUpCompany] = useState<string>('')
-    const [cost, setUpCost] = useState<string>('')
-    const [deadline, setUpDeadline] = useState<string>('')
-    const [assigned, setUpAssigned] = useState<string>('')
+    const [title, setTitle] = useState<string>('')
+    const [company, setCompany] = useState<string>('')
+    const [cost, setCost] = useState<string>('')
+    const [deadline, setDeadline] = useState<string>('')
 
     const titleHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setUpTitle(event.target.value)
+        setTitle(event.target.value)
     }
     const companyHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setUpCompany(event.target.value)
+        setCompany(event.target.value)
     }
     const costHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setUpCost(event.target.value)
+        setCost(event.target.value)
     }
     const deadlineHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setUpDeadline(event.target.value)
-    }
-    const assignedHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setUpAssigned(event.target.value)
+        setDeadline(event.target.value)
     }
     const newProject: IProject = {
         title: title,
@@ -45,39 +42,39 @@ const GetProject: React.FC<GetProjectType> = props => {
         assigned: JSON.parse(localStorage.getItem('user') as string)
     }
 
-    const handlerSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
         event.preventDefault()
-        ApiService
+        apiService
             .createProject(newProject)
             .then(response => response.json())
             .then(response => {
                 dispatch(updateProjects(response))
-                ApiService
+                apiService
                     .getAllProjects()
                     .then(response => response.json())
                     .then(response => {
-                        localStorage.setItem('projects', JSON.stringify([...localStorage.getItem('projects') as any, response]))
+                        localStorage.setItem('projects',
+                            JSON.stringify([...localStorage.getItem('projects') as any, response]))
                     })
                     .catch(err => console.error(err))
             })
             .catch(err => console.error(err))
-        setUpTitle('')
-        setUpCompany('')
-        setUpCost('')
-        setUpDeadline('')
-        setUpAssigned('')
+        setTitle('')
+        setCompany('')
+        setCost('')
+        setDeadline('')
+        window.location.assign('http://localhost:3000/projects')
     }
     return (
         <div className="getProject" style={{display: props.getProjectDisplay}}>
             <div className="close" onClick={props.close}> </div>
             <h1>Create project</h1>
-            <form action="/" onSubmit={handlerSubmit} className="getProject__form">
+            <form action="/" onSubmit={handleSubmit} className="getProject__form">
                 <input type="text" onChange={titleHandler} value={title} placeholder="Title" required />
                 <input type="text" onChange={companyHandler} value={company} placeholder="Company" required />
                 <input type="number" onChange={costHandler}  value={cost} placeholder="Cost $" min="0" required />
                 <input type="date" onChange={deadlineHandler} value={deadline} name="deadline"
                        min="01-01-2020" max="01-01-2030" required />
-                <input type="text" onChange={assignedHandler} value={assigned} placeholder="Assigned" required />
                 <button type="submit">Add project</button>
             </form>
         </div>

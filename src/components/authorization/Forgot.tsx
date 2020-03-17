@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './Authorization.css'
 import {IUser} from '../../interfaces/IUser'
-import ApiService from '../../services/ApiService'
+import apiService from '../../services/ApiService'
 import { A } from 'hookrouter'
 import {HeaderMenu} from '../headerMenu/HeaderMenu'
 import {AsideMenu} from '../asideMenu/AsideMenu'
@@ -31,7 +31,7 @@ export const Forgot:React.FC = () => {
 
     const handlerSubmit = (event: React.FormEvent<HTMLFormElement>):void => {
         event.preventDefault()
-        ApiService
+        apiService
             .resetPassword(user)
             .then(response => response.json())
             .then(response => console.log(response))
@@ -53,7 +53,7 @@ export const Forgot:React.FC = () => {
                     </div>
                 </div>
                 <div className="container__form">
-                    <form name="resetForm" className="form">
+                    <form name="resetForm" onSubmit={handlerSubmit} className="form">
                         <h1>Reset password</h1>
                         <A href="/login">Existing member?</A>
                         <input type="email" onChange={emailHandler} value={email} name="userEmail"

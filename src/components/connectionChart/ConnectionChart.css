@@ -1,0 +1,22 @@
+.chart {
+    position: relative;
+}
+.chart__menu {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 98%;
+    bottom: 24px;
+}
+
+.chart__item {
+    margin-left: 50px;
+    color: #9ca1b2;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.32px;
+}

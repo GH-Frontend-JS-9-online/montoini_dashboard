@@ -1,9 +1,14 @@
 .project-nav {
-    width: 100%;
-    position: sticky;
+    padding: 28px 62px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     box-shadow: 0 3px 80px rgba(23, 24, 32, 0.2);
-    background-color: #2481ce;
-    margin-bottom: 50px;
+    background-color: #2196f3;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    margin-bottom: 25px;
 }
 
 .project-nav__menu {
@@ -12,100 +17,43 @@
     align-items: center;
 }
 
-.project-nav__item-left {
-    margin-left: 145px;
+.project-nav__item {
+    margin-left: 105px;
 }
 
-.project-nav__item-right {
-    margin-right: 25px;
-}
-
-.project-nav__left, .project-nav__right {
-    display: flex;
-    align-items: center;
-}
-
-.project-nav__link-right, .project-nav__link-left {
+.project-nav__link {
     text-decoration: none;
     color: #ffffff;
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 0.6px;
-    margin: 30px 0 30px 0;
 }
 
 .workflow {
     color: black;
-    margin-left: -100px;
-}
-
-.allProjects {
-    width: 150px;
-    height: 39px;
-    display: flex;
-    border-radius: 18px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    background-color: transparent;
-    color: #ffffff;
-}
-
-.allProjects:hover {
-    background-color: #ffffff;
-    color: #2481ce;
-    transition: background-color 1s ease;
-}
-
-.all {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 120px;
-}
-
-.all > span {
-    position: absolute;
-    right: 130px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 18px;
 }
 
 @media (max-width: 812px) and (min-width: 310px) {
     .project-nav {
         width: 100%;
+        height: 60px;
         display: flex;
-        align-items: center;
-        margin-bottom: 10px;
+        flex-direction: row;
+        justify-content: center;
     }
 
-    .project-nav__left {
-         margin-left: -70px;
+    .project-nav__menu {
+        margin-left: 70px;
     }
 
-    .project-nav__item-left {
-        margin-right: -40px;
-        margin-top: 5px;
-        margin-bottom: 5px;
+    .project-nav__item {
+        margin-left: 15px;
     }
 
-    .project-nav__item-right {
-        margin-right: -20px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-
-    .project-nav__link-right, .project-nav__link-left {
+    .project-nav__link {
         font-size: 11px;
-        font-weight: 500;
-        letter-spacing: normal;
-    }
-
-    .allProjects {
-        transform: scale(0.65);
-    }
-
-    .all > span {
-        right: 90px;
+        display: flex;
+        flex-direction: row;
     }
 }
 
@@ -113,23 +61,19 @@
     .project-nav {
         width: 100%;
         height: 70px;
-        top: 0;
     }
 
     .project-nav__menu {
-        width: 100%;
+        width: 90%;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        justify-content: flex-start;
     }
 
-    .project-nav__item-left {
-        margin-right: -20px;
-        margin-top: 0;
+    .project-nav__item {
+        margin-left: 60px;
     }
 
-    .project-nav__item-right {
-        margin-right: -10px;
-        margin-top: 0;
+    .project-nav__link {
+        font-size: 12px;
     }
 }
